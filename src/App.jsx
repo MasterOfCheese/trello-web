@@ -1,31 +1,24 @@
-import Button from '@mui/material/Button'
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm'
-import ThreeDRotation from '@mui/icons-material/ThreeDRotation'
-import HomeIcon from '@mui/icons-material/Home'
-import { yellow } from '@mui/material/colors'
-import MdPhone from '@mui/icons-material/Phone'
-import Chip from '@mui/material/Chip'
-import Typography from '@mui/material/Typography'
-import { useColorScheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import InputLabel from '@mui/material/InputLabel'
-import MenuItem from '@mui/material/MenuItem'
-import FormControl from '@mui/material/FormControl'
-import Select from '@mui/material/Select'
-import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
+import LightModeIcon from '@mui/icons-material/LightMode'
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
 import Box from '@mui/material/Box'
+import FormControl from '@mui/material/FormControl'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import Select from '@mui/material/Select'
+import { useColorScheme } from '@mui/material/styles'
+import Container from '@mui/material/Container'
 
 function ModeSelect() {
   const { mode, setMode } = useColorScheme()
   const handleChange = (event) => {
     const selectedMode = event.target.value
-    console.log(selectedMode)
+    // console.log(selectedMode)
     setMode(selectedMode)
   }
 
   return (
+    //select dark/light mode
     <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
       <InputLabel id="label-select-dark-light-mode">Mode</InputLabel>
       <Select
@@ -54,52 +47,37 @@ function ModeSelect() {
   )
 }
 
-function ModeToggle() {
-  const { mode, setMode } = useColorScheme()
-
-  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)') //lấy giá trị true/false của dark/light mode trên user system
-  // const prefersLightMode = useMediaQuery('(prefers-color-scheme: light)') //lấy giá trị true/false của dark/light mode trên user system
-  // console.log('prefersDarkMode: ', prefersDarkMode)
-  // console.log('prefersLightMode: ', prefersLightMode)
-
-  return (
-    <Button
-      onClick={() => {
-        setMode(mode === 'light' ? 'dark' : 'light')
-      }}
-    >
-      {mode === 'light' ? 'Turn dark' : 'Turn light'}
-    </Button>
-  )
-}
-
 function App() {
   return (
-    <>
-      <ModeSelect />
-      <hr />
-      <ModeToggle />
-      <div>NamPhuongDev</div>
-      <Typography variant='body2' color='text.secondary'>NamPhuongTest TypoGraphy 01</Typography>
-      <Typography variant='body1' color='test.primary'>NamPhuongTest TypoGraphy 02</Typography>
-
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-      <br/>
-      <hr />
-      <AccessAlarmIcon/>
-      <ThreeDRotation/>
-      <HomeIcon />
-      <HomeIcon color="primary" />
-      <HomeIcon color="secondary" />
-      <HomeIcon color="success" />
-      <HomeIcon color="action" />
-      <HomeIcon color="disabled" />
-      <HomeIcon sx={{ color: yellow[500] }} />
-      <br />
-      <Chip icon={<MdPhone />} label="Call me" />
-    </>
+    <Container disableGutters maxWidth = { false } sx={{ height: '100vh' }}>
+      <Box sx={{
+        backgroundColor:'primary.light',
+        width:'100%',
+        height: (theme) => theme.trelloCustom.appBarHeight, //sử dụng arrow function để truyền theme trong theme.js vào
+        display:'flex',
+        alignItems:'center'
+      }}>
+        <ModeSelect />
+      </Box>
+      <Box sx={{
+        backgroundColor:'primary.dark',
+        width:'100%',
+        height: (theme) => theme.trelloCustom.boardBarHeight,
+        display:'flex',
+        alignItems:'center'
+      }}>
+        Board Bar
+      </Box>
+      <Box sx={{
+        backgroundColor: 'primary.main',
+        width:'100%',
+        height: (theme) => `calc(100vh - ${theme.trelloCustom.appBarHeight} - ${theme.trelloCustom.boardBarHeight})`,
+        display:'flex',
+        alignItems:'center'
+      }}>
+        Board Content
+      </Box>
+    </Container>
   )
 }
 
