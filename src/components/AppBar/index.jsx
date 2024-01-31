@@ -29,7 +29,7 @@ function AppBar() {
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }} >
         <AppsIcon sx={{ color: 'primary.main' }} />
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }} >
-          <SvgIcon component={TrelloIcon} inheritViewBox sx={{ color: 'primary.main' }} />
+          <SvgIcon component={TrelloIcon} fontSize="small" inheritViewBox sx={{ color: 'primary.main' }} />
           <Typography variant='span' sx={{ fontSize:'1.2rem', fontWeight: 'bold', color: 'primary.main' }}>Trello</Typography>
         </Box>
 
@@ -46,14 +46,14 @@ function AppBar() {
         <ModeSelect />
 
         {/* cursor: 'pointer' là để biến 1 đối tượng thành 1 link  */}
-        <Tooltip title="Notification">
+        <Tooltip title="Notifications">
           <Badge color="secondary" variant="dot" sx={{ cursor: 'pointer' }}>
-            <NotificationsNoneIcon />
+            <NotificationsNoneIcon sx={{ color: 'primary.main' }} />
           </Badge>
         </Tooltip>
 
         <Tooltip title="Help">
-          <HelpOutlineIcon sx={{ cursor: 'pointer' }} />
+          <HelpOutlineIcon sx={{ cursor: 'pointer', color: 'primary.main' }} />
         </Tooltip>
         <Profiles />
       </Box>
