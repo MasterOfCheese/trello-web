@@ -32,7 +32,7 @@ function Profiles() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <Avatar sx={{ width: 34, height: 34 }} alt='NamPhuongDev' src='https://scontent.fhan5-11.fna.fbcdn.net/v/t1.6435-9/117953052_912233895949914_1646223645244486637_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=be3454&_nc_ohc=qYzsNRCl1b4AX9R_D1l&_nc_ht=scontent.fhan5-11.fna&oh=00_AfD7_c-82DsmGQLjF8ltkiU_FARxEfJRk42wYyM1LVDVrQ&oe=65DDE79B'/>
+          <Avatar sx={{ width: 36, height: 36 }} alt='NamPhuongDev' src='https://scontent.fhan5-11.fna.fbcdn.net/v/t1.6435-9/117953052_912233895949914_1646223645244486637_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=be3454&_nc_ohc=qYzsNRCl1b4AX9R_D1l&_nc_ht=scontent.fhan5-11.fna&oh=00_AfD7_c-82DsmGQLjF8ltkiU_FARxEfJRk42wYyM1LVDVrQ&oe=65DDE79B'/>
         </IconButton>
       </Tooltip>
       <Menu
