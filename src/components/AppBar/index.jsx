@@ -26,14 +26,15 @@ function AppBar() {
   return (
     <Box sx={{
       width: '100%',
-      height: (theme) => theme.trelloCustom.appBarHeight, //sử dụng arrow function để truyền theme trong theme.js vào
+      height: (theme) => theme.trello.appBarHeight, //sử dụng arrow function để truyền theme trong theme.js vào
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
       gap: 2,
       paddingX: 2,
       overflowX: 'auto',
-      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0')
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0'),
+      '&::-webkit-scrollbar-track': { m: 2 }
     }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }} >
