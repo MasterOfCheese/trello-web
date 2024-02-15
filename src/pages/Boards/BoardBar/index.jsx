@@ -30,7 +30,7 @@ function BoardBar() {
     <Box
       sx={{
         width: '100%',
-        height: (theme) => theme.trelloCustom.boardBarHeight,
+        height: (theme) => theme.trello.boardBarHeight,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -38,7 +38,8 @@ function BoardBar() {
         paddingX: 2,
         overflowX: 'auto',
         bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2'),
-        borderBottom: '1px solid #fff'
+        borderBottom: '1px solid #fff',
+        '&::-webkit-scrollbar-track': { m: 2 }
       }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }} >
         <Chip sx={MENU_STYLES} icon={<DashboardIcon />} label="NamPhuongDev Board" clickable />
@@ -61,12 +62,15 @@ function BoardBar() {
         </Button>
 
         <AvatarGroup max={7} sx={{
-          // gap: '10px',
+          gap: '10px',
           '& .MuiAvatar-root': {
             width: 34,
             height: 34,
             fontSize: 16,
-            border: 'none'
+            border: 'none',
+            color: 'white',
+            cursor: 'pointer',
+            '&:first-of-type': { bgcolor: '#a4b0be' }
           }
         }}>
           <Tooltip title="namphuongdev">
