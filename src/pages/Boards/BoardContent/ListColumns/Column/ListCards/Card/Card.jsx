@@ -19,7 +19,8 @@ function Card({ card }) {
     // touchAction: 'none', // Only for sensor default of PointerSensor
     transform: CSS.Translate.toString(transform), // If use CSS.Transform->Will be bugged stretch
     transition,
-    opacity: isDragging ? 0.5 : 1
+    opacity: isDragging ? 0.5 : 1,
+    border: isDragging ? '1px solid #2ecc71' : 1
   }
   const shouldShowCardActions = () => {
     return !!card?.memberIds?.length || !!card?.comments?.length || !!card?.attachments?.length

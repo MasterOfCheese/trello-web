@@ -74,10 +74,10 @@ function BoardBar({ board }) {
           }
         }}>
           <Tooltip title="namphuongdev">
-            <Avatar alt="namphuongdev" src="https://scontent.fhan5-11.fna.fbcdn.net/v/t1.6435-9/117953052_912233895949914_1646223645244486637_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=be3454&_nc_ohc=qYzsNRCl1b4AX9R_D1l&_nc_ht=scontent.fhan5-11.fna&oh=00_AfD7_c-82DsmGQLjF8ltkiU_FARxEfJRk42wYyM1LVDVrQ&oe=65DDE79B" />
+            <Avatar alt="namphuongdev" src="https://i.pinimg.com/564x/ad/8b/60/ad8b60ab6c5d1a1ae628fbcff2b36a94.jpg" />
           </Tooltip>
           <Tooltip title="namphuongdev">
-            <Avatar alt="namphuongdev" src="https://scontent.fhan5-6.fna.fbcdn.net/v/t39.30808-6/332763103_1165607994138483_3739353753683593320_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeFbSuGJneg7VMW2f929BjqgIOnRmQ4c048g6dGZDhzTj-71x6MpS-Rlnwan1cxuaZDHHyCQxRuoHGP64lS5o21b&_nc_ohc=sRG0pt-B-J8AX_GQVJP&_nc_ht=scontent.fhan5-6.fna&oh=00_AfCVx_8G6yjSXvLZXDGXQ96Uahh-w4pIZtUrHC0c-SrLgQ&oe=65C4D0AA" />
+            <Avatar alt="namphuongdev" src="https://i.pinimg.com/564x/79/2f/83/792f832680c684b1792294a272f625ab.jpg" />
           </Tooltip>
           <Tooltip title="namphuongdev">
             <Avatar alt="namphuongdev" src="https://i.pinimg.com/564x/a3/88/e7/a388e7a6db4ca18c4bbbb202678e4b66.jpg" />
