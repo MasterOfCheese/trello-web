@@ -9,7 +9,8 @@ import {
   useSensor,
   useSensors,
   DragOverlay,
-  defaultDropAnimationSideEffects
+  defaultDropAnimationSideEffects,
+  closestCorners
 } from '@dnd-kit/core'
 import { arrayMove } from '@dnd-kit/sortable'
 import { useEffect, useState } from 'react'
@@ -165,7 +166,8 @@ function BoardContent({ board }) {
       onDragEnd={handleDragEnd}
       onDragStart={handleDragStart}
       onDragOver={handleDragOver}
-      sensors={sensors}
+      sensors={sensors} // cảm biến touch (video số 30)
+      collisionDetection={ closestCorners } //import thuật toán phát hiện va chạm fix lỗi với cover lớn sẽ ko kéo qua lại column khác được, sẽ dùng closestCorners của dnd-kit
     >
       <Box
         sx={{
