@@ -12,7 +12,6 @@ import {
   defaultDropAnimationSideEffects,
   closestCorners,
   pointerWithin,
-  rectIntersection,
   getFirstCollision,
   closestCenter
 } from '@dnd-kit/core'
@@ -254,15 +253,17 @@ function BoardContent({ board }) {
     if (activeDragItemType === ACTIVE_DRAG_ITEM_TYPE.COLUMN) {
       return closestCorners({ ...args })
     }
-    // Tìm các điểm giao nhau, va chạm(intersection) với con trỏ
+    // Tìm các điểm giao nhau, va chạm(intersection), trả về 1 mảng các va chạm với con trỏ
     const pointerIntersections = pointerWithin(args)
 
-    // Thuật toán phát hiện va chạm sẽ trả về 1 mảng các va chạm ở đây
-    const intersections = !!pointerIntersections?.length
-      ? pointerIntersections
-      : rectIntersection(args)
+    if (!pointerIntersections?.length) return
 
-    let overID = getFirstCollision(intersections, 'id')
+    // // Thuật toán phát hiện va chạm sẽ trả về 1 mảng các va chạm ở đây(ko cần bước này nữa nên cmt lại-để fix bux flickering-video 37.1)
+    // const intersections = !!pointerIntersections?.length
+    //   ? pointerIntersections
+    //   : rectIntersection(args)
+
+    let overID = getFirstCollision(pointerIntersections, 'id')
     // console.log('overID: ', overID)
     if (overID) {
       const checkColumn = orderedColumns.find(column => column._id === overID)
